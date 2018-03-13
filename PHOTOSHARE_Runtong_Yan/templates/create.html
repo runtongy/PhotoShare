@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Create Albums</title>
+</head>
+{% if albums %}
+<h2>Here are your Albums</h2>
+    <ul>
+    {% for album in albums %}
+
+        <li>{{album[0]}}<br>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+<body>
+        <div class="title">
+            <h1>Enter your Album's information below</h1>
+        </div>
+        <div id="content">
+            <form method="post" action="{{ url_for('create_album') }}">
+                <label for="name">Enter your Album's name:</label>
+                <input type="name" name="name" required='true' /><br />
+                <input type="submit" value="add" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

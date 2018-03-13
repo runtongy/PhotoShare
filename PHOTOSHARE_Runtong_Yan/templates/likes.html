@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Likes</title>
+</head>
+<body>
+
+<div id="content">
+            <form method="post" action="{{ url_for('liketable') }}">
+                <label for="pid">Enter the ID of the photo you like:</label>
+                <input type="pid" name="pid" required='true' /><br />
+                <input type="submit" value="Like!" />
+
+            </form>
+         </div>
+
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/showlikes'>Check Likes!</a></li>
+</ul>
+</html>

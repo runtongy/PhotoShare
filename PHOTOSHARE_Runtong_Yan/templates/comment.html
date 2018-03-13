@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Comment</title>
+</head>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+<body>
+
+<div id="content">
+            <form method="post" action="{{ url_for('comment') }}">
+                <label for="content">Enter the content you that want to comment:</label>
+                <input type="content" name="content" required='true' /><br />
+                <label for="pid">Enter the ID of the Picture that you want to comment:</label>
+                <input type="pid" name="pid" required='true' /><br />
+                <input type="submit" value="Comment" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/show_comments'>Go Check Comments on Specific Photos!</a></li>
+<li><a href='/searchcomment'>Go Search Comments!</a></li>
+</ul>
+</html>

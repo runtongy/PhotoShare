@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+    <meta charset="UTF-8">
+    <title>Recommend Friend</title>
+</head>
+<body>
+
+{% if recfriends %}
+    <ul>
+    {% for recfriend in recfriends %}
+
+        <li>{{recfriend[0]}}<br>
+           </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+        <div id="content">
+            <form method="post" action="{{ url_for('rc_friend') }}">
+                <input type="submit" value="Find Your Recommended Friends!" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/friends'>Add Friends!</a></li>
+<li><a href='/friendslist'>See your Friend List!</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

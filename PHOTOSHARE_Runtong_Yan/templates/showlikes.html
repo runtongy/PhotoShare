@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Likes</title>
+</head>
+<body>
+
+{% if counts %}
+    <p>Total number of likes is</p>
+        <li>{{ counts[0][0] }}</li>
+{% endif %}
+
+{% if likes %}
+    <p>Users Who Like</p>
+    {% for like in likes %}
+        <li>{{ like[0] }}</li>
+    {% endfor %}
+{% endif %}
+
+<div id="content">
+            <form method="post" action="{{ url_for('show_likes') }}">
+                <label for="pid">Enter the ID of the photo you want to check:</label>
+                <input type="pid" name="pid" required='true' /><br />
+                <input type="submit" value="Search" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/likes'>Like photos!</a></li>
+</ul>
+</html>

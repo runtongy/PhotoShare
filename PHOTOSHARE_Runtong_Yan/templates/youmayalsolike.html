@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>You may also like</title>
+</head>
+<body>
+
+  {% if tags %}
+    <h2>Top 5 tags for you are:</h2>
+    <ul>
+      {% for tag in tags%}
+        <li>{{tag}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+<p>You May also like these photos:</p>
+  {% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>Photo ID: {{photo[1]}}<br>
+        <li>Caption: {{photo[2]}}<br>
+        <img src='data:image/png;base64, {{photo[0]}}'/></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+       <div id="content">
+            <form method="post" action="{{ url_for('alsolike') }}">
+                <input type="submit" value="Check!" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/MostPopularTag'>Check the most popular tag now</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

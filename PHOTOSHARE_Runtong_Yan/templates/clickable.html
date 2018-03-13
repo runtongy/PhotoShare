@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clickable</title>
+</head>
+<body>
+
+{% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>Picture ID: {{photo[2]}}<br>
+        <li>Caption: {{photo[1]}}<br>
+        <img src='data:image/png;base64, {{photo[0]}}'/></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+<li><a href='/'>Home</a></li>
+<li><a href='/MostPopularTag'>Back to Most Popular Tag</a></li>
+</html>

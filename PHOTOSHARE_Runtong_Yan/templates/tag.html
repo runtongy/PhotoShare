@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>tag</title>
+</head>
+<body>
+        <div id="content">
+            <form method="post" action="{{ url_for('tag') }}">
+                <label for="pid">Enter the ID of the photo that you want add the tag on here:</label>
+                <input type="pid" name="pid" required='true' /><br />
+                <label for="hashtag">Enter the tag you want to add here:</label>
+                <input type="hashtag" name="hashtag" required='true' /><br />
+                <input type="submit" value="tag" />
+
+            </form>
+         </div>
+</body>
+<ul>
+<li><a href='/MostPopularTag'>Check the most popular tag now</a></li>
+<li><a href='/youmayalsolike'>Check your own popular tags!</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

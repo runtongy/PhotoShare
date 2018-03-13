@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Comments!</title>
+</head>
+<body>
+
+{% if comments %}
+    <ul>
+    {% for comment in comments %}
+        <li>Content: {{comment[0]}}<br>
+        <li>Date of Creation: {{comment[1]}}<br>
+        <li>Who did the Comment: {{ comment[2] }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<div id="content">
+            <form method="post" action="{{ url_for('show_comments') }}">
+                <label for="pid">Enter the ID of the PHOTO that you want to search:</label>
+                <input type="pid" name="pid" required='true' /><br />
+                <input type="submit" value="Search" />
+
+            </form>
+         </div>
+
+
+</body>
+<ul>
+<li><a href='/comment'>Back to Comment Page</a></li>
+<li><a href='/showlikes'>Check Likes!</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

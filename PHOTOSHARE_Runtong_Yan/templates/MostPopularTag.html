@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Most Popular Tags</title>
+</head>
+<body>
+
+  {% if tags %}
+    {% for tag in tags %}
+        <li><a href="/clickable?hashtag={{ tag[0] }}">{{ tag[0] }}</a></li>
+        <pre>
+        </pre>
+    {% endfor %}
+  {% endif %}
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/tag'>Back to Tag</a></li>
+</ul>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Album list</title>
+</head>
+<body>
+<table width = "400">
+    <tr align="left">
+        <th>ID</th>
+        <th>Album Name</th>
+        <th>Date of Creation</th>
+    </tr>
+
+    {% for album in albums %}
+    <tr align="left">
+        <td>{{ album[0] }}</td>
+        <td>{{ album[1] }}</td>
+        <td>{{ album[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+<ul>
+<li><a href='/create'>Create Albums</a></li>
+<li><a href='/deletealbum'>Delete Albums</a></li>
+<li><a href='/Photos'>Check Photos</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

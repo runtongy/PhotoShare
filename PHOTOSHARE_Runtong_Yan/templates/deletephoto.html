@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Photo</title>
+</head>
+<body>
+<div class="title">
+            <h1>Enter your photo's information below:</h1>
+        </div>
+        <div id="content">
+            <form method="post" action="{{ url_for('delete_photo') }}">
+                <label for="pid">Enter your photo's ID:</label>
+                <input type="pid" name="pid" /><br />
+                <input type="submit" value="Delete" />
+
+            </form>
+         </div>
+
+</body>
+<ul>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>

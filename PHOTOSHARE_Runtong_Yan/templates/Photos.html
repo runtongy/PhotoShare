@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <title>Here are your photos</title>
+</head>
+<body>
+{% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>Photo ID: {{photo[1]}}<br>
+        <li>Caption: {{photo[2]}}<br>
+        <img src='data:image/png;base64, {{photo[0]}}'/></li>
+
+    {% endfor %}
+    </ul>
+{% endif %}
+
+        <div id="content">
+            <form method="post" action="{{ url_for('show_photo') }}">
+                <label for="aid">Enter your the ID of the album that your photo belongs to:</label>
+                <input type="aid" name="aid" required='true' /><br />
+                <input type="submit" value="search" />
+
+            </form>
+         </div>
+</body>
+<ul>
+<li><a href='/upload'>Upload Photos</a></li>
+<li><a href='/deletephoto'>Delete Photos</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</html>
